@@ -1,0 +1,118 @@
+{
+    "materials": [{
+        "map": "2B1B43EE-73F9-37D5-BB48-E17DE839C224",
+        "depthTest": true,
+        "ambient": 11579568,
+        "specular": 0,
+        "blending": "NormalBlending",
+        "type": "MeshPhongMaterial",
+        "uuid": "93831B89-11B9-31B1-A879-E029ECAF81F2",
+        "color": 11579568,
+        "emissive": 0,
+        "name": "Standard",
+        "depthWrite": true,
+        "vertexColors": false,
+        "shininess": 50,
+        "side": 2
+    }],
+    "images": [{
+        "uuid": "1DE1ECFC-A4B4-3303-B912-1BD9D047940E",
+        "name": "flor_alpha_01.png",
+        "url": "flor_alpha_01.png"
+    }],
+    "metadata": {
+        "type": "Object",
+        "generator": "io_three",
+        "version": 4.4
+    },
+    "object": {
+        "uuid": "222606C5-CD98-40BC-93E4-1C801B6FB84A",
+        "children": [{
+            "name": "Plane",
+            "uuid": "631279BD-3DB0-34E6-BE17-B19991DEF360",
+            "matrix": [-1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1],
+            "visible": true,
+            "type": "Object",
+            "children": [{
+                "name": "Plane001",
+                "uuid": "68289124-E67C-3BC3-AF30-7255B353C7B7",
+                "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+                "visible": true,
+                "type": "Mesh",
+                "material": "93831B89-11B9-31B1-A879-E029ECAF81F2",
+                "castShadow": true,
+                "receiveShadow": true,
+                "geometry": "3C06785F-F3F4-3F6B-9FD0-1A3ECE6A52E9"
+            }]
+        }],
+        "type": "Scene",
+        "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    },
+    "geometries": [{
+        "uuid": "3C06785F-F3F4-3F6B-9FD0-1A3ECE6A52E9",
+        "data": {
+            "animations": [],
+            "faces": [43,0,1,2,3,0,0,1,2,3,0,0,0,0],
+            "name": "Plane001Geometry",
+            "vertices": [-5.90551,5.90551,0,-5.90551,-5.90551,0,5.90551,-5.90551,0,5.90551,5.90551,0],
+            "skinIndices": [],
+            "uvs": [[0,1,0,0,1,0,1,1]],
+            "bones": [],
+            "influencesPerVertex": 2,
+            "skinWeights": [],
+            "metadata": {
+                "bones": 0,
+                "version": 3,
+                "morphTargets": 0,
+                "materials": 1,
+                "normals": 1,
+                "generator": "io_three",
+                "vertices": 4,
+                "faces": 1,
+                "uvs": 1
+            },
+            "morphTargets": [],
+            "normals": [0,0,1]
+        },
+        "type": "Geometry",
+        "materials": [{
+            "DbgColor": 15658734,
+            "depthTest": true,
+            "colorAmbient": [0.690196,0.690196,0.690196],
+            "colorDiffuse": [0.690196,0.690196,0.690196],
+            "blending": "NormalBlending",
+            "specularCoef": 50,
+            "mapDiffuseRepeat": [1,1],
+            "DbgName": "Standard",
+            "colorEmissive": [0,0,0],
+            "shading": "phong",
+            "doubleSided": true,
+            "DbgIndex": 0,
+            "visible": true,
+            "depthWrite": true,
+            "mapDiffuse": "flor_alpha_01.png",
+            "mapDiffuseAnisotropy": 1,
+            "transparent": false,
+            "opacity": 1,
+            "wireframe": false,
+            "colorSpecular": [0,0,0],
+            "mapDiffuseWrap": ["RepeatWrapping","RepeatWrapping"]
+        }]
+    }],
+    "animations": [{
+        "name": "default",
+        "fps": 29,
+        "tracks": []
+    }],
+    "textures": [{
+        "name": "flor_alpha_01_png",
+        "anisotropy": 1,
+        "image": "1DE1ECFC-A4B4-3303-B912-1BD9D047940E",
+        "repeat": [1,1],
+        "uuid": "2B1B43EE-73F9-37D5-BB48-E17DE839C224",
+        "magFilter": 1006,
+        "minFilter": 1008,
+        "wrap": [1000,1000],
+        "mapping": 300
+    }]
+}
