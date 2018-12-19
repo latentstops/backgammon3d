@@ -12,6 +12,7 @@
     <style>
         body {
             height: 500px;
+            overflow: hidden;
         }
         #canvas {
             width: 100%;
@@ -22,7 +23,8 @@
 <body>
 <div id="canvas"></div>
 <script>
-
+    canvas.style.height = window.innerHeight + 'px';
+    canvas.style.width = window.innerWidth + 'px';
     var board_manager = new Backgammon3DBoard.Manager(canvas, null, 'assets/');
         board_manager.onLoadComplete = function () {
             board_manager.start();
