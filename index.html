@@ -26,7 +26,9 @@
         board_manager.onLoadComplete = function () {
             board_manager.start();
             board_manager.api.setCheckersInPoint( 1, [ 0, 0, 0, 0 ] );
+            board_manager.api.setCheckersInPoint( 24, [ 1,1,1,1,1,1,1,1 ] );
             board_manager.api.setReadOnly( 0, false );
+            board_manager.api.setReadOnly( 1, false );
             board_manager.api.roll( 6, 6, 0, true );
         };
         board_manager.load();
