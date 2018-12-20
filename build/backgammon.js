@@ -1462,7 +1462,7 @@ var Backgammon3DBoard;
 
     DiceManager.prototype.init = function ( manager, params, modelsPath, animations ) {
 
-        this.initProperties();
+        this.initProperties();      
 
         var thisParams = { mass: 0.3, diceParams: {x: .2, y: .2, z: .2 } };
 
@@ -3578,7 +3578,7 @@ var Backgammon3DBoard;
 
         this.isMouseDown = true;
 
-        var intersectObject = self.intersectObject;
+        var intersectObject = self.intersectObject;                
 
         if (intersectObject) {
 
@@ -3682,7 +3682,7 @@ var Backgammon3DBoard;
         var moveObject = {from: indexFrom, to: indexTo};
 
         var diceManager = this.manager.diceManager;
-
+    
 		if(event.webButton === 1){
 
 			self.resetEventsParams();
@@ -3702,7 +3702,7 @@ var Backgammon3DBoard;
 		}
 
 		var condition = self.isMouseInsideCircle();
-
+		
 		if( condition && !self.isCheckerMoveStarted ){
 
 			self.resetEventsParams();
@@ -3713,7 +3713,7 @@ var Backgammon3DBoard;
 
 			return;
 
-		}
+		}       
 
         self.resetEventsParams();
 
@@ -4228,8 +4228,9 @@ var Backgammon3DBoard;
 
     GameHelper.prototype.init = function (manager) {
 
-        this.scene       = manager.scene;
-        this.positionMap = manager.checkerManager.positionMap;
+        this.scene          = manager.scene;
+        this.checkerManager = manager.checkerManager;
+        this.positionMap    = manager.checkerManager.positionMap;
 
         this.initProperties();
 
@@ -4380,6 +4381,20 @@ var Backgammon3DBoard;
 
         points.children[rnd].visible = !points.children[rnd].visible;
 
+    };
+
+    GameHelper.prototype.short = function(){
+
+        var checkerManager = this.checkerManager;
+
+        checkerManager.setCheckersInPoint( 1,  [ 1, 1 ] );
+        checkerManager.setCheckersInPoint( 6,  [ 0, 0, 0, 0, 0 ] );
+        checkerManager.setCheckersInPoint( 8,  [ 0, 0, 0 ] );
+        checkerManager.setCheckersInPoint( 12, [ 1, 1, 1, 1, 1 ] );
+        checkerManager.setCheckersInPoint( 13, [ 0, 0, 0, 0, 0 ] );
+        checkerManager.setCheckersInPoint( 17, [ 1, 1, 1 ] );
+        checkerManager.setCheckersInPoint( 19, [ 1, 1, 1, 1, 1 ] );
+        checkerManager.setCheckersInPoint( 24, [ 0, 0 ] );
     };
 
 
@@ -5291,6 +5306,8 @@ var Backgammon3DBoard;
 
         var optimizationManager = self.optimizationManager;
 
+        var cameraControls = self.cameraControls || { update: function(){} };
+
         renderer.clear();
 
         renderer.render(scene, camera);
@@ -5299,7 +5316,7 @@ var Backgammon3DBoard;
 
         diceManger.update(delta);
 
-
+        cameraControls.update();
 
 
         //optimizationManager.update();
@@ -5628,6 +5645,16 @@ var Backgammon3DBoard;
 
                 }
 
+            },
+
+            /**
+            *
+            * Helpers
+            *
+            * */
+
+            short: function () {
+                gameHelper.short();
             }
 
 

@@ -9,7 +9,10 @@ var gulp = require('gulp'),
     gp_uglify = require('gulp-uglify'),
     gp_sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('build:board', function(){
+// gulp.task = function () {
+// };
+
+function buildBoard(){
     return gulp.src([
         "scripts/stats.js",
         "scripts/backgammon-3d-board.js",
@@ -28,41 +31,48 @@ gulp.task('build:board', function(){
         "scripts/game-helper.js",
         "scripts/optimization-manager.js",
         "scripts/manager.js",
-		"scripts/module-exporter.js"
+        "scripts/module-exporter.js"
     ])
-    .pipe(gp_sourcemaps.init())
-    .pipe(gp_concat('backgammon.js'))
-    .pipe(gulp.dest('build'))
-    .pipe(gp_rename('backgammon.min.js'))
-    .pipe(gp_uglify())
-    .pipe(gp_sourcemaps.write('./'))
-    .pipe(gulp.dest('build'));
-});
+        .pipe(gp_sourcemaps.init())
+        .pipe(gp_concat('backgammon.js'))
+        .pipe(gulp.dest('build'))
+        .pipe(gp_rename('backgammon.min.js'))
+        .pipe(gp_uglify())
+        .pipe(gp_sourcemaps.write('./'))
+        .pipe(gulp.dest('build'));
+}
 
-gulp.task('build:vendor', function() {
+// gulp.task('build:board', buildBoard);
+
+function buildVendor() {
     return gulp.src([
-        "node_modules/three/three.js",
-        "node_modules/three/examples/js/controls/OrbitControls.js",
-        "node_modules/three/examples/js/geometries/TextGeometry.js",
-        "node_modules/three/examples/js/utils/FontUtils.js",
+        "bower_components/three.js/build/three.js",
+        "bower_components/three.js/examples/js/controls/OrbitControls.js",
+        // "bower_components/three.js/examples/js/geometries/TextGeometry.js",
+        // "bower_components/three.js/examples/js/utils/FontUtils.js",
         "scripts/helvetiker_regular.typeface.js",
-        "node_modules/three/examples/js/libs/tween.min.js",
-		"scripts/vendor-module-exporter.js"
+        "lib/Tween.js",
+        "scripts/vendor-module-exporter.js"
     ])
-    .pipe(gp_sourcemaps.init())
-    .pipe(gp_concat('vendor.js'))
-    .pipe(gulp.dest('build'))
-    .pipe(gp_rename('vendor.min.js'))
-    .pipe(gp_uglify())
-    .pipe(gp_sourcemaps.write('./'))
-    .pipe(gulp.dest('build'));
-});
+        .pipe(gp_sourcemaps.init())
+        .pipe(gp_concat('vendor.js'))
+        .pipe(gulp.dest('build'))
+        .pipe(gp_rename('vendor.min.js'))
+        .pipe(gp_uglify())
+        .pipe(gp_sourcemaps.write('./'))
+        .pipe(gulp.dest('build'));
+}
 
-gulp.task('watch', function() {
-    // watch many files
-    watch('scripts/*.js', function() {
-        gulp.run('build:board');
-    });
-});
+// gulp.task('build:vendor', buildVendor);
 
-gulp.task('default', ['build:board', 'build:vendor', 'watch'], function(){});
+// gulp.task('watch', function() {
+//     // watch many files
+//     watch('scripts/*.js', function() {
+//         gulp.run('build:board');
+//     });
+// });
+
+// gulp.task('default', ['build:board', 'build:vendor', 'watch'], function(){});
+
+exports.default = buildBoard;
+exports.vendor = buildVendor;
