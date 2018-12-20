@@ -12,8 +12,9 @@
 
     GameHelper.prototype.init = function (manager) {
 
-        this.scene       = manager.scene;
-        this.positionMap = manager.checkerManager.positionMap;
+        this.scene          = manager.scene;
+        this.checkerManager = manager.checkerManager;
+        this.positionMap    = manager.checkerManager.positionMap;
 
         this.initProperties();
 
@@ -164,6 +165,20 @@
 
         points.children[rnd].visible = !points.children[rnd].visible;
 
+    };
+
+    GameHelper.prototype.short = function(){
+
+        var checkerManager = this.checkerManager;
+
+        checkerManager.setCheckersInPoint( 1,  [ 1, 1 ] );
+        checkerManager.setCheckersInPoint( 6,  [ 0, 0, 0, 0, 0 ] );
+        checkerManager.setCheckersInPoint( 8,  [ 0, 0, 0 ] );
+        checkerManager.setCheckersInPoint( 12, [ 1, 1, 1, 1, 1 ] );
+        checkerManager.setCheckersInPoint( 13, [ 0, 0, 0, 0, 0 ] );
+        checkerManager.setCheckersInPoint( 17, [ 1, 1, 1 ] );
+        checkerManager.setCheckersInPoint( 19, [ 1, 1, 1, 1, 1 ] );
+        checkerManager.setCheckersInPoint( 24, [ 0, 0 ] );
     };
 
 

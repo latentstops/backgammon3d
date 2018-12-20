@@ -1462,7 +1462,7 @@ var Backgammon3DBoard;
 
     DiceManager.prototype.init = function ( manager, params, modelsPath, animations ) {
 
-        this.initProperties();      
+        this.initProperties();
 
         var thisParams = { mass: 0.3, diceParams: {x: .2, y: .2, z: .2 } };
 
@@ -3253,7 +3253,7 @@ var Backgammon3DBoard;
 
                 self.intersectObject = null;
 
-                //self.cameraControls.enabled = true;
+                self.cameraControls.enabled = true;
 
             };
 
@@ -3578,7 +3578,7 @@ var Backgammon3DBoard;
 
         this.isMouseDown = true;
 
-        var intersectObject = self.intersectObject;                
+        var intersectObject = self.intersectObject;
 
         if (intersectObject) {
 
@@ -3682,7 +3682,7 @@ var Backgammon3DBoard;
         var moveObject = {from: indexFrom, to: indexTo};
 
         var diceManager = this.manager.diceManager;
-    
+
 		if(event.webButton === 1){
 
 			self.resetEventsParams();
@@ -3702,7 +3702,7 @@ var Backgammon3DBoard;
 		}
 
 		var condition = self.isMouseInsideCircle();
-		
+
 		if( condition && !self.isCheckerMoveStarted ){
 
 			self.resetEventsParams();
@@ -3713,7 +3713,7 @@ var Backgammon3DBoard;
 
 			return;
 
-		}       
+		}
 
         self.resetEventsParams();
 
@@ -4729,7 +4729,7 @@ var Backgammon3DBoard;
 
         this.initConfig(mainPath);
 
-        this.initStats();       
+        this.initStats();
 
         this.modelsPath = this.config || '';
 
@@ -4817,7 +4817,7 @@ var Backgammon3DBoard;
 
         var config = this.config.camera;
 
-        this.camera = new THREE.PerspectiveCamera(33, WIDTH / HEIGHT, 1, 10000);
+        this.camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT, 1, 10000);
 
         this.camera.position.copy(config.position);
 
@@ -5252,7 +5252,7 @@ var Backgammon3DBoard;
         if(!this.platformDetector.isWeb) return;
 
         this.renderer.clear();
-        
+
         this.animationFrameID && cancelAnimationFrame(
 			this.animationFrameID.data && this.animationFrameID.data.handleId || this.animationFrameID
 		);

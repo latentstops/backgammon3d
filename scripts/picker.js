@@ -136,7 +136,7 @@
 
                 self.intersectObject = null;
 
-                //self.cameraControls.enabled = true;
+                self.cameraControls.enabled = true;
 
             };
 

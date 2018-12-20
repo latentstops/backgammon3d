@@ -75,7 +75,7 @@
 
         this.initConfig(mainPath);
 
-        this.initStats();       
+        this.initStats();
 
         this.modelsPath = this.config || '';
 
@@ -163,7 +163,7 @@
 
         var config = this.config.camera;
 
-        this.camera = new THREE.PerspectiveCamera(33, WIDTH / HEIGHT, 1, 10000);
+        this.camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT, 1, 10000);
 
         this.camera.position.copy(config.position);
 
@@ -598,7 +598,7 @@
         if(!this.platformDetector.isWeb) return;
 
         this.renderer.clear();
-        
+
         this.animationFrameID && cancelAnimationFrame(
 			this.animationFrameID.data && this.animationFrameID.data.handleId || this.animationFrameID
 		);
@@ -637,6 +637,8 @@
 
         var optimizationManager = self.optimizationManager;
 
+        var cameraControls = self.cameraControls || { update: function(){} };
+
         renderer.clear();
 
         renderer.render(scene, camera);
@@ -645,7 +647,7 @@
 
         diceManger.update(delta);
 
-
+        cameraControls.update();
 
 
         //optimizationManager.update();
@@ -974,6 +976,16 @@
 
                 }
 
+            },
+
+            /**
+            *
+            * Helpers
+            *
+            * */
+
+            short: function () {
+                gameHelper.short();
             }
 
 
