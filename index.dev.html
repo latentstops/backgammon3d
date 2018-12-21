@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel='stylesheet' type='text/css'>
+
     <script src="lib/jquery.js"></script>
     <script src="lib/three72.js"></script>
     <script src="lib/OrbitControls.js"></script>
@@ -33,27 +37,11 @@
     <script src="scripts/platform-detector.js"></script>
     <script src="scripts/text-writer.js"></script>
 
-    <style>
-        body {
-            height: 500px;
-            overflow: hidden;
-            position: relative;
-            background-image: url("assets/Header-Background-Repeat1.jpg") ;
-        }
-        #canvas {
-            width: 100%;
-            height: 100%;
-        }
-        #tools {
-            position: absolute;
-            display: block;
-        }
-    </style>
 </head>
 <body>
 <div id="tools">
-    <button data-state="0" id="demo">Demo</button>
-    <button data-state="0" id="roll">R. Roll</button>
+    <a data-state="0" id="demo">Demo</a>
+    <a data-state="0" id="roll">R. Roll</a>
 </div>
 <div id="canvas"></div>
 <script src="scripts/main.js"></script>

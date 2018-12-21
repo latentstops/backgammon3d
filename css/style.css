@@ -1,0 +1,53 @@
+body {
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    background-image: url("../assets/Header-Background-Repeat1.jpg") ;
+}
+#canvas {
+    width: 100%;
+    height: 100%;
+}
+#tools {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a {
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: rgb(101, 72, 53);
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 500;
+    font-size: 2em;
+    display: block;
+    padding: 4px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 0px rgb(80, 56, 44), 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px rgb(80, 56, 44), 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px rgb(80, 56, 44), 0px 9px 25px rgba(0,0,0,.7);
+    margin: 0 10px auto;
+    width: 160px;
+    text-align: center;
+
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+}
+
+a:active {
+    -webkit-box-shadow: 0px 3px 0px rgb(80, 56, 44), 0px 3px 6px rgba(0, 0, 0, .9);
+    -moz-box-shadow: 0px 3px 0px rgb(80, 56, 44), 0px 3px 6px rgba(0, 0, 0, .9);
+    box-shadow: 0px 3px 0px rgb(80, 56, 44), 0px 3px 6px rgba(0, 0, 0, .9);
+    position: relative;
+    top: 6px;
+}
