@@ -42,3 +42,5 @@ function random( num ){
 
 demo.onclick = toggleDemo;
 roll.onclick = randomRollDices;
+
+

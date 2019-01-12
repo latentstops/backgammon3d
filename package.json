@@ -1,0 +1,27 @@
+{
+  "name": "latentstops.gihub.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/latentstops/latentstops.gihub.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/latentstops/latentstops.gihub.io/issues"
+  },
+  "homepage": "https://github.com/latentstops/latentstops.gihub.io#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

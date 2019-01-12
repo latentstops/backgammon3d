@@ -42,8 +42,51 @@
 <div id="tools">
     <a data-state="0" id="demo">Demo</a>
     <a data-state="0" id="roll">R. Roll</a>
+	<input type="file" id="boardMap"/>
+	<input type="file" id="boardSpecularMap"/>
+	<input type="file" id="boardBumpMap"/>
+	
 </div>
 <div id="canvas"></div>
+
 <script src="scripts/main.js"></script>
+
+<script>	
+    var boardMap = document.querySelector('#boardMap');
+	var boardSpecularMap = document.querySelector('#boardSpecularMap');
+	var boardBumpMap = document.querySelector('#boardBumpMap');
+	
+	changeTexture(boardMap, 'map');
+	changeTexture(boardSpecularMap, 'specularMap');
+	changeTexture(boardBumpMap, 'bumpMap');
+	
+	function changeTexture( source, name ){
+		source.onchange = function(e){
+			onChange(e, name);
+		}
+	}
+	
+	function onChange(e,name){
+		window.material = board_manager.scene.getChildByName('Board_03').material
+		var board = board_manager.scene.getObjectByName('Board_03');
+		var reader = new FileReader();
+
+		reader.onload = function(e) {
+		
+		    var image = document.createElement('img');
+			    image.src = e.target.result;		  
+			  
+		    var texture = new THREE.Texture(image);
+			    texture.needsUpdate = true;
+				
+		    material[name] = texture;
+			material.map.needsupdate = true;
+			material.needsUpdate = true;
+		}
+
+		reader.readAsDataURL( boardMap.files[0] );
+	}
+	
+</script>
 </body>
 </html>
