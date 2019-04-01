@@ -142,7 +142,7 @@
 
             camera: {
                 position: new THREE.Vector3( 0, 13, 6 ),
-                zoom : 1.40//1.38
+                zoom : 1.38
             }
         };
 
