@@ -9,8 +9,8 @@ board_manager.onLoadComplete = function () {
     board_manager.api.short();
     board_manager.api.setReadOnly( 0, false );
     board_manager.api.setReadOnly( 1, false );
-    randomRollDices();
-    toggleDemo.call(demo);
+    //randomRollDices();
+    //toggleDemo.call(demo);
 };
 board_manager.load();
 
