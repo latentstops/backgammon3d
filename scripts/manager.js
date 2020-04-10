@@ -434,7 +434,7 @@
         material.map = map;
         material.bumpMap = map;
 
-        material.bumpScale = 0.003;
+        material.bumpScale = 0.01;
         material.shininess = 50;
 
         board.material = material;
