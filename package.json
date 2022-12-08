@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/latentstops/latentstops.gihub.io#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
